@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>SERVLET</display-name>
+    <servlet-name>SERVLET</servlet-name>
+    <servlet-class>COM.BUENFEST.SERVLET</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SERVLET</servlet-name>
+    <url-pattern>/SERVLET</url-pattern>
+  </servlet-mapping>
 </web-app>
