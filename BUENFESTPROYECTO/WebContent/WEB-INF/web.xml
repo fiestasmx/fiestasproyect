@@ -17,6 +17,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>SERVLET</servlet-name>
-    <url-pattern>/SERVLET</url-pattern>
+    <url-pattern>/Admin*</url-pattern>
   </servlet-mapping>
 </web-app>

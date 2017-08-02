@@ -35,9 +35,17 @@ public class SERVLET extends HttpServlet {
 		//out.println("</html>");
 		String accion=request.getParameter("accion");
 		if(accion !=null) {
+			if(accion.equals("login"))
+			{
+				getServletContext().getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+			}
+			else if(accion.equals("inicio"))
+			{
+				getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+			}
 			
 		}else {
-			getServletContext().getRequestDispatcher("/Index.psp").forward(request, response);
+			getServletContext().getRequestDispatcher("/jsp/index.psp").forward(request, response);
 		}
 		
 	}

@@ -7,15 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>index.jsp</h1>
-<%
-String s="Este Mensaje no es muy dinamicó  KBB";
-out.println(s);
-%>
-<p>Este Mensaje no es muy dinamico</p>
+<h1>Index.jsp</h1>
+<p>
+<a href="?accion=login">Iniciar Sesión</a>
+</p>
 
-<%
-out.println("Este Mensaje Es dinamico: "+request.getHeader("USER-AGENT"));
-%>
 </body>
 </html>
