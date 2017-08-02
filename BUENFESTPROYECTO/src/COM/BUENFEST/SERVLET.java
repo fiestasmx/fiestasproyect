@@ -43,7 +43,7 @@ public class SERVLET extends HttpServlet {
 			{
 				getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 			}
-			
+			 
 		}else {
 			getServletContext().getRequestDispatcher("/jsp/index.psp").forward(request, response);
 		}
