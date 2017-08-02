@@ -9,7 +9,7 @@
 <body>
 <h1>index.jsp</h1>
 <%
-String s="Este Mensaje no es muy dinamicó";
+String s="Este Mensaje no es muy dinamicó  KBB";
 out.println(s);
 %>
 <p>Este Mensaje no es muy dinamico</p>
