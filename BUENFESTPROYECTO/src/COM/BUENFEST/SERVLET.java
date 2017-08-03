@@ -26,28 +26,26 @@ public class SERVLET extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		String accion = request.getParameter("accion");
 		
-		//PrintWriter out= response.getWriter();
-		//out.println("<html>");
-		//out.println("<h1>Mensaje desde mi primer SerVlet</h1>");
-		//out.println("</html>");
-		String accion=request.getParameter("accion");
-		if(accion !=null) {
-			if(accion.equals("login"))
-			{
+		if (accion != null) {
+			
+			if (accion.equals("login")) {
 				getServletContext().getRequestDispatcher("/jsp/login.jsp").forward(request, response);
 			}
-			else if(accion.equals("inicio"))
-			{
+			else if (accion.equals("inicio")) {
 				getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 			}
-			 
-		}else {
-			getServletContext().getRequestDispatcher("/jsp/index.psp").forward(request, response);
+			else if (accion.equals("iniciarSesion")) {
+				getServletContext().getRequestDispatcher("/jsp/postLogin.jsp").forward(request, response);
+			}
+			
+			
 		}
-		
+		else {
+			getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+		}
 	}
 
 	/**
@@ -55,7 +53,7 @@ public class SERVLET extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
 		
 	}
 
