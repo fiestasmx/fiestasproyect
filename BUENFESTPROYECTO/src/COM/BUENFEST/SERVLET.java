@@ -84,7 +84,7 @@ String accion = request.getParameter("accion");
 		else {
 			getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 		}
-		
+		//JVV prueba de Maquina
 		
 	}
 
