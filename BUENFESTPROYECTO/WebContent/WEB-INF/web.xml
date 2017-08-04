@@ -14,6 +14,10 @@
     <display-name>SERVLET</display-name>
     <servlet-name>SERVLET</servlet-name>
     <servlet-class>COM.BUENFEST.SERVLET</servlet-class>
+    <init-param>
+        <param-name>rutaJsp</param-name>
+        <param-value>/jsp/</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>SERVLET</servlet-name>

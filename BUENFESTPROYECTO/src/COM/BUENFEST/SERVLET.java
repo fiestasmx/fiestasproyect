@@ -1,8 +1,10 @@
 package COM.BUENFEST;
 
+import java.io.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +17,7 @@ import javax.servlet.http.HttpSession;
  */
 public class SERVLET extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private String rutaJsp;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -23,6 +25,24 @@ public class SERVLET extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+
+    
+    
+    
+    
+    
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		rutaJsp = config.getInitParameter("rutaJsp");
+		System.out.println(rutaJsp);
+		
+	}
+
+
+
+
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,14 +54,14 @@ public class SERVLET extends HttpServlet {
 		if (accion != null) {
 			
 			if (accion.equals("login")) {
-				getServletContext().getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher(rutaJsp + "login.jsp").forward(request, response);
 			}
 			else if (accion.equals("inicio")) {
-				getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher(rutaJsp + "index.jsp").forward(request, response);
 			}
 		}
 		else {
-			getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher(rutaJsp + "index.jsp").forward(request, response);
 		}
 	}
 
@@ -75,14 +95,14 @@ String accion = request.getParameter("accion");
 				contexto.setAttribute("usuario", usuario);
 				contexto.setAttribute("contrasena", contrasena);
 				
-				getServletContext().getRequestDispatcher("/jsp/postLogin.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher(rutaJsp + "postLogin.jsp").forward(request, response);
 				
 			}
 			
 			
 		}
 		else {
-			getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher(rutaJsp + "index.jsp").forward(request, response);
 		}
 		//JVV prueba de Maquina
 		
