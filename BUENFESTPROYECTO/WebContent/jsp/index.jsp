@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
 <h1>Index.jsp</h1>
 <p>
 <a href="?accion=login">Iniciar Sesión</a>

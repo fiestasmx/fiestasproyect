@@ -28,15 +28,6 @@
 	</form>
 <a href="?accion=inicio">Regresar</a>
 
-
-
-
-
-
-
-
-
-
 </p>
 </body>
 </html>
