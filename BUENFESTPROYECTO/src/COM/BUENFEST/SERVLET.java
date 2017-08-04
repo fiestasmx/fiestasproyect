@@ -41,9 +41,6 @@ public class SERVLET extends HttpServlet {
 
 
 
-
-
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

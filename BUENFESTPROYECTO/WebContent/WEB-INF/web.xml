@@ -18,6 +18,7 @@
         <param-name>rutaJsp</param-name>
         <param-value>/jsp/</param-value>
     </init-param>
+    
   </servlet>
   <servlet-mapping>
     <servlet-name>SERVLET</servlet-name>

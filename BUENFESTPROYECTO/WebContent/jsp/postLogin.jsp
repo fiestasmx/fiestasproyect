@@ -22,6 +22,5 @@
 	<%="usuario: " + application.getAttribute("usuario")
 		+ ", contraseña: " + application.getAttribute("contrasena")%>
 	
-
 </body>
 </html>
