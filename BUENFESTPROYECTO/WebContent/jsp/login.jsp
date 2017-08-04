@@ -9,7 +9,6 @@
 <body>
 <h1>Login.jsp</h1>
 <p>
-
 	<form method="post" action="?accion=iniciarSesion">
 		<table>
 			<tr> 
@@ -27,7 +26,6 @@
 		</table>
 	</form>
 <a href="?accion=inicio">Regresar</a>
-
 </p>
 </body>
 </html>
