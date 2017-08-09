@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Inicio de sesion</title>
 </head>
 <body>
 <h1>Login.jsp</h1>
@@ -13,11 +13,15 @@
 		<table>
 			<tr> 
 				<td>Nombre de usuario: </td>
-				<td> <input type="text" name="usuario" /> </td>
+				<td> <input type="text" name="usuario"  size="35"/> </td>
 			</tr>
 			<tr> 
 				<td>Contraseña: </td>
-				<td> <input type="password" name="contrasena" /> </td>
+				<td> <input type="password" name="contrasena" size="35"/> </td>
+			</tr>
+			<tr> 
+		    <td> </td>
+				<td> <input type="checkbox" checked="checked">Recordar mis datos</input> </td>
 			</tr>
 			<tr> 
 				<td> </td>
@@ -25,7 +29,6 @@
 			</tr>
 		</table>
 	</form>
-<a href="?accion=inicio">Regresar</a>
 </p>
 </body>
 </html>

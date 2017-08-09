@@ -12,12 +12,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
 /**
  * Servlet implementation class SERVLET
  */
 public class SERVLET extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String rutaJsp;
+	private static final Logger log = LogManager.getLogger("Servlet: ");
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -36,7 +42,8 @@ public class SERVLET extends HttpServlet {
 		super.init(config);
 		rutaJsp = config.getInitParameter("rutaJsp");
 		System.out.println(rutaJsp);
-		
+		//log.info("ruta jsp: " + rutaJsp);
+	//Pendiente por cambios JVV
 	}
 
 

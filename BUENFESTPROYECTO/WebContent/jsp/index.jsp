@@ -7,10 +7,21 @@
 <title>Insert title here</title>
 </head>
 <body> 
-<h1>Index.jsp</h1>
-<p>
-<a href="?accion=login">Iniciar Sesión</a>
-</p>
+<h1>Ingresado como: </h1>
+	
+	<table>
+		<tr>
+			<td>Cerrar sesión</td>
+		</tr>
+		<tr>
+			<td>Consultar administradores</td>
+		</tr>
+	</table>
+
+	<p>
+		Contenido principal
+		
+	</p>
 
 </body>
 </html>
