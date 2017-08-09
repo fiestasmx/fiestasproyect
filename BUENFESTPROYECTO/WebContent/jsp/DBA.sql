@@ -27,3 +27,28 @@ correo javier.vv@hotmail.com
 Base de datos: buenfestest
 Nombre de usuario: buenfestestnovie
 Correo electrónico: javier.vv@hotmail.com
+
+
+
+
+
+///////////////////
+Otro servidor
+Text
+
+
+jynjavi.heliohost.org
+P@ssw0rd_2017
+
+https://johnny.heliohost.org:2083/cpsess5602265918/frontend/paper_lantern/index.html
+
+
+johnny.heliohost.org
+
+ Base de datos: jynjavi_BuenFest
+Usuario: jynjavi_erse_201
+P@ssw0rd_2017
+
+
+
+
