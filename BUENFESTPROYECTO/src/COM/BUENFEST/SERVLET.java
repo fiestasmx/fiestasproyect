@@ -13,6 +13,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -73,6 +74,7 @@ public class SERVLET extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String accion = request.getParameter("accion");
+		HttpSession sesion = request.getSession();
 		
 		if (accion != null) {
 			
@@ -84,6 +86,12 @@ public class SERVLET extends HttpServlet {
 				setRespuestaControlador("index").forward(request, response);
 				//getServletContext().getRequestDispatcher(rutaJsp + "index.jsp").forward(request, response);
 			}
+			else if (accion.equals("logout")) {
+				sesion.invalidate();
+				log.info("sesion destruida");
+				setRespuestaControlador("login").forward(request, response);
+			}
+			
 		}
 		else {
 			setRespuestaControlador("login").forward(request, response);
@@ -125,6 +133,20 @@ catch (SQLException e) {
 				String contrasena = request.getParameter("contrasena");
 			    
 				Cuenta cuenta = new Cuenta(con);
+				try {
+					if (request.getParameter("ckbox").equals("on")) {
+						Cookie cookie = new Cookie("usuario", usuario);
+						cookie.setMaxAge(60*60*24);
+						response.addCookie(cookie);
+						log.info("cookie creada");
+					}
+				}
+				catch (NullPointerException e) {
+					log.info("chbox vacio");
+				}
+				
+				
+				
 				
 				if (cuenta.login(usuario, contrasena)) {
 					log.info("Ingresado correctamente como: " + usuario);

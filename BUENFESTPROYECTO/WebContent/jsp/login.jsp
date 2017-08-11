@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Inicio de sesion</title>
+
 </head>
 <body>
 <h1>Login.jsp</h1>
@@ -23,7 +24,19 @@
 		<table>
 			<tr> 
 				<td>Nombre de usuario: </td>
-				<td> <input type="text" name="usuario"  size="35"/> </td>
+				<%
+					Cookie[] cookies = request.getCookies();
+					String valor = "";
+					for(Cookie c:cookies){
+						if(c.getName().equals("usuario")){
+							valor = c.getValue();
+						}
+						else{
+							out.println("No encontrado");
+						}
+					}
+				%>
+			<td> <input type="text" name="usuario" size="35" value="<%=valor%>"/> </td>
 			</tr>
 			<tr> 
 				<td>Contraseña: </td>
@@ -31,7 +44,7 @@
 			</tr>
 			<tr> 
 		    <td> </td>
-				<td> <input type="checkbox" checked="checked">Recordar mis datos</input> </td>
+				<td> <input name="ckbox" type="checkbox" checked="checked">Recordar mis datos</input> </td>
 			</tr>
 			<tr> 
 				<td> </td>
