@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body> 
-<h1>Ingresado como: </h1>
-	
+<h1>Ingresado como: <%=session.getAttribute("email") %> </h1>
+		
 	<table>
 		<tr>
-			<td>Cerrar sesión</td>
+			<td><a href="?accion=logout">Cerrar sesión</a></td>
 		</tr>
 		<tr>
 			<td>Consultar administradores</td>

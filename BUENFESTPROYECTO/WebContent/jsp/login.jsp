@@ -8,7 +8,17 @@
 </head>
 <body>
 <h1>Login.jsp</h1>
-<p>
+<%-- 	<%=request.getAttribute("error") %> --%>
+	
+	<span style="color:red; font-weight:bold;">
+		<%
+			String error = (String) request.getAttribute("error");
+			if(error != null){
+				out.println(error);
+			}
+		%>
+	</span> <br/>
+	
 	<form method="post" action="?accion=iniciarSesion">
 		<table>
 			<tr> 
@@ -29,6 +39,5 @@
 			</tr>
 		</table>
 	</form>
-</p>
 </body>
 </html>
