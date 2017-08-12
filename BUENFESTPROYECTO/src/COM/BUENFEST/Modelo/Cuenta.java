@@ -5,9 +5,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+
+import COM.BUENFEST.Modelo.Beans.Usuarios;
 
 public class Cuenta {
 	private static final Logger log = LogManager.getLogger("Cuenta: ");
@@ -49,5 +52,35 @@ public class Cuenta {
 		}
 	}
 	
-	
+public ArrayList<Usuarios> consultarAdministradores(){
+		
+		ArrayList<Usuarios> usuarios_ = new ArrayList<Usuarios>();
+		
+		String sql = "select * from usuarios";
+		
+		try {
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()){
+				
+				Usuarios usuarios = new Usuarios(
+						rs.getString("email"),
+						rs.getString("constrasena"),
+						rs.getString("nombre"),
+						rs.getInt("idUsuarios")
+						);
+				
+				usuarios_.add(usuarios);
+			}
+			
+		}
+		catch (SQLException e) {
+			administradores.clear();
+			log.error("Al consultar usuarios: " + e.getMessage());
+		}
+		
+		return usuarios;
+	}
 }
