@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" 
-prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -15,12 +14,19 @@ prefix="c" %>
 <%-- 	<%=request.getAttribute("error") %> --%>
 	
 	<span style="color:red; font-weight:bold;">
-		<%
-			String error = (String) request.getAttribute("error");
-			if(error != null){
-				out.println(error);
-			}
-		%>
+	<%-- 		<c:if test="${requestScope.error != null}"> --%>
+    <%-- 			<c:out value="${requestScope.error}" /> --%>
+    <%-- 		</c:if> --%>
+
+		<c:choose>
+			<c:when test="${requestScope.error != null}">
+				<c:out value="${requestScope.error}" />
+			</c:when>
+			<c:otherwise>
+				Sin errores
+			</c:otherwise>
+		</c:choose>
+		
 	</span> <br/>
 	
 	<form method="post" action="?accion=iniciarSesion">
