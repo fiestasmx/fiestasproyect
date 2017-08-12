@@ -118,6 +118,14 @@ public class SERVLET extends HttpServlet {
 				setRespuestaControlador("ConsultaUsuarios").forward(request, response);
 			}
 			
+			else if (accion.equals("registroPregunta")) {
+				setRespuestaControlador(accion).forward(request, response);
+			}
+			else if (accion.equals("registrarPregunta")) {
+				setRespuestaControlador(accion).forward(request, response);
+			}
+			
+			
 			
 		}
 		else {

@@ -16,6 +16,11 @@
 		<tr>
 			<td><a href="?accion=consultarUsuarios">Consultar Usuarios</a> </td>
 		</tr>
+		
+		<tr>
+			<td><a href="?accion=registroPregunta">Registrar pregunta</a> </td>
+		</tr>
+		
 	</table>
 
 	<p>
