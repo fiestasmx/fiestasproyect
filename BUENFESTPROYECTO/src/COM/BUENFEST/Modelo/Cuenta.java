@@ -69,7 +69,7 @@ public ArrayList<Usuarios> consultarUsuarios(){
 						rs.getString("email"),
 						rs.getString("contrasena"),
 						rs.getString("nombre"),
-						rs.getInt("idUsuarios")
+						rs.getInt("IdPreguntaSeguridadFK")
 						);
 				
 				usuarios_.add(usuarios);
