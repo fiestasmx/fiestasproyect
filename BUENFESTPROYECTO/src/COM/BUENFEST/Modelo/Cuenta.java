@@ -52,7 +52,7 @@ public class Cuenta {
 		}
 	}
 	
-public ArrayList<Usuarios> consultarAdministradores(){
+public ArrayList<Usuarios> consultarUsuarios(){
 		
 		ArrayList<Usuarios> usuarios_ = new ArrayList<Usuarios>();
 		
@@ -74,13 +74,13 @@ public ArrayList<Usuarios> consultarAdministradores(){
 				
 				usuarios_.add(usuarios);
 			}
-			
+			rs.close();
 		}
 		catch (SQLException e) {
-			administradores.clear();
+			usuarios_.clear();
 			log.error("Al consultar usuarios: " + e.getMessage());
 		}
 		
-		return usuarios;
+		return usuarios_;
 	}
 }

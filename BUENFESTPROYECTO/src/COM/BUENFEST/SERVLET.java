@@ -4,6 +4,7 @@ package COM.BUENFEST;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -25,6 +26,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import COM.BUENFEST.Modelo.Cuenta;
+import COM.BUENFEST.Modelo.Beans.Usuarios;
 
 
 /**
@@ -76,6 +78,15 @@ public class SERVLET extends HttpServlet {
 		String accion = request.getParameter("accion");
 		HttpSession sesion = request.getSession();
 		
+		try {
+			con = ds.getConnection();
+		}
+		catch (SQLException e) {
+			// Enviar a una vista de error
+			log.error("Error al crear conexion: " + e.getMessage());
+		}
+		
+		
 		if (accion != null) {
 			
 			if (accion.equals("login")) {
@@ -91,6 +102,22 @@ public class SERVLET extends HttpServlet {
 				log.info("sesion destruida");
 				setRespuestaControlador("login").forward(request, response);
 			}
+			
+			else if (accion.equals("consultarUsuarios")) {
+				
+				//Cuenta cuenta = new Cuenta(con);
+				ArrayList<Usuarios> usuarios = new Cuenta(con).consultarUsuarios();
+				
+				if (usuarios.isEmpty()) {
+					request.setAttribute("mensaje", "* No se encontraron administradores");
+				}
+				else {
+					request.setAttribute("mensaje", "Usuarios encontrados");
+					sesion.setAttribute("usuarios", usuarios);
+				}
+				setRespuestaControlador("ConsultaUsuarios").forward(request, response);
+			}
+			
 			
 		}
 		else {
