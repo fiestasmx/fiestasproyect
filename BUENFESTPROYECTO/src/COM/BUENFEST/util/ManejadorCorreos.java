@@ -20,7 +20,7 @@ public class ManejadorCorreos {
 	public ManejadorCorreos() {
 		props = new Properties();
 		props.setProperty("mail.smtp.host", "smtp.gmail.com");
-		props.setProperty("mail.smtp.port", "587");
+		props.setProperty("mail.smtp.port", "587");//465
 		props.setProperty("mail.smtp.user", "fiestasmxoficial@gmail.com");
 		props.setProperty("mail.smtp.auth", "true");
 	}
