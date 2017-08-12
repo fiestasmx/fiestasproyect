@@ -67,7 +67,7 @@ public ArrayList<Usuarios> consultarUsuarios(){
 				
 				Usuarios usuarios = new Usuarios(
 						rs.getString("email"),
-						rs.getString("constrasena"),
+						rs.getString("contrasena"),
 						rs.getString("nombre"),
 						rs.getInt("idUsuarios")
 						);
